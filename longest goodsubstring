@@ -1,0 +1,27 @@
+public class longest_goodsubstring {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str=sc.next();
+		System.out.println(goodsub(str));
+
+	}
+
+	private static int goodsub(String str) {
+		int ans=0;
+		int prev=0;
+		for(int i=0;i<str.length();i++) {		
+	if(str.charAt(i)=='a'||str.charAt(i)=='e'||str.charAt(i)=='i'||str.charAt(i)=='o'||str.charAt(i)=='u'){
+				prev++;
+				ans=Math.max(ans, prev);
+				
+			}
+	else {
+		prev=0;
+	}
+		}
+		return ans;
+		
+	}
+
+}
